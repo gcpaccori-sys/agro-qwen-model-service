@@ -55,6 +55,8 @@ def chat() -> dict[str, str]:
     content = response["choices"][0]["message"]["content"] or ""
     return {"content": content}
 
-
+# Al final del archivo model_api.py
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8001, debug=True)
+    # Solo para testing local
+    port = int(os.getenv("PORT", 8001))
+    app.run(host="0.0.0.0", port=port, debug=False)
